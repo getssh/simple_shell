@@ -3,9 +3,10 @@
   * main - entry point for the whole program
   * @argc: argument count
   * @argv: string argumets / vector
+  * @env: aray of strings zat hold env (var=value)
   * Return: zero Success
   */
-int main(int argc, char **argv)
+int main(int argc, char **argv, char **env)
 {
 	char *str;
 	char **tokes;
@@ -17,11 +18,11 @@ int main(int argc, char **argv)
 	do {
 		/*pos = 0;*/
 		fprintf(stderr, "$ ");
-		str = read_line();
+		str = read_line2();
 		if (strcmp(str, "exit\n") == 0)
 			break;
-		if (atoi(str) == EOF)
-			break;
+		if (strcmp(str, "env\n") == 0)
+			_printenv(env);
 		tokes = args(str);
 		/*len = strlen(str);*/
 		 /*exe = excute(tokes);*/

@@ -8,6 +8,7 @@
 #include <sys/wait.h>
 #include <errno.h>
 extern int errno;
+extern char **environ;
 /**
   * struct bultin - struct to handel bulit in fucntions/ commands
   * @comds: passed commands
@@ -22,4 +23,6 @@ typedef struct bultin
 char **args(char *str);
 char *read_line(void);
 int excute(char **args, char *argv);
+void _printenv(char **env);
+char *read_line2(void);
 #endif
