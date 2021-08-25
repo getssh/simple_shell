@@ -1,16 +1,5 @@
 #include "header.h"
 
-int cd_b(char **args);
-int exit_b(char **args);
-int help_b(char **args);
-
-
-int (*built_func[]) (char **) = {
-	&cd_b,
-	&help_b,
-	&exit_b
-};
-
 int num_builtins()
 {
 	return (sizeof(builtin_str) / sizeof(char *));

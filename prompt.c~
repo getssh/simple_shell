@@ -5,7 +5,7 @@
  * Return: Noting since void.
  */
 
-void prompt(void)
+void prompt2(void)
 {
 	fprintf(stderr, "$ ");
 }
