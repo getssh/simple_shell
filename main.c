@@ -1,45 +1,33 @@
-#include "head.h"
-/**
-  * main - entry point for the whole program
-  * @argc: argument count
-  * @argv: string argumets / vector
-  * @env: aray of strings zat hold env (var=value)
-  * Return: zero Success
-  */
-int main(int argc, char **argv, char **env)
-{
-	char *str;
-	char **tokes;
-	/*int len;*/
-	/*int pos = 0;*/
+#include "header.h"
 
-	if (argc < 1)
-		return (0);
+int main(int ac __attribute__((unused)), char **av __attribute__((unused)))
+{
+	char *cmd;
+	char **args;
+	int stand;
+
 	do {
-		/*pos = 0;*/
-		fprintf(stderr, "$ ");
-		str = read_line2();
-		if (strcmp(str, "exit\n") == 0)
-			break;
-		if (strcmp(str, "env\n") == 0)
-			_printenv(env);
-		tokes = args(str);
-		/*len = strlen(str);*/
-		 /*exe = excute(tokes);*/
-		if ((excute(tokes, argv[0])) < 0)
+		prompt();
+		cmd = read_cmd();
+
+		if (!cmd)
+			exit(EXIT_SUCCESS);
+
+		if (strcmp(cmd, "\n") == 0)
 		{
-			perror(argv[0]);
-			exit(EXIT_FAILURE);
+			free(cmd);
+			continue;
 		}
-		/**
-		* while (tokes[pos] != NULL)
-		* {
-		*	printf("%s\n", tokes[pos]);
-		*	pos++;
-		* }
-		*/
-		free(str);
-		free(tokes);
+		if (strcmp(cmd, "exit\n") == 0)
+		{
+			free(cmd);
+			break;
+		}
+
+		args = parse(cmd);
+		stand = execute(args);
+
 	} while (1);
-	return (0);
+
+	exit(EXIT_SUCCESS);
 }
