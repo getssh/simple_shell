@@ -1,9 +1,9 @@
 #include "shell.h"
 
 /**
- * _strcat - concatenates two string in a path form
- * @first: the first given destination
- * @second: the second given source
+ * _strcat - concatenates two string in a path
+ * @first: dest
+ * @second: source
  *
  * Return: (Success) to the newly string
  * ------- (Fail) if it failed
@@ -32,8 +32,7 @@ char *_strcat(char *first, char *second)
  * _strlen - finds the length of a given string
  * @str: the given string
  *
- * Return: (Success) the length of the string
- * ------- (Fail) negative value
+ * Return: (Success) the length of the string or  (Fail) negative value
  */
 int _strlen(char *str)
 {
@@ -48,8 +47,7 @@ int _strlen(char *str)
  * @s1: the first given string
  * @s2: the second given string
  *
- * Return: (Success) a positive number
- * ------- (Fail) a negative number
+ * Return: (Success) a positive number or (Fail) a negative number
  */
 int _strcmp(char *s1, char *s2)
 {
