@@ -28,6 +28,6 @@ char **parse(char *line)
 	}
 	split = strtok(NULL, DELIM);
 	arrays[i] = NULL;
-	return (arrays);
+	return (split);
 }
 
