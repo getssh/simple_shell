@@ -1,10 +1,9 @@
 #include "shell.h"
 /**
- * is_path_form - chekc if the given fikenname is a path
+ * is_path_form - chekc if the given file name is a path
  * @data: the data strucct pointer
  *
- * Return: (Success)
- * ------- (Fail) otherwise
+ * Return: (Success) or (Fail)
  */
 int is_path_form(sh_t *data)
 {
@@ -17,11 +16,10 @@ int is_path_form(sh_t *data)
 }
 #define DELIMITER ":"
 /**
- * is_short_form - chekc if the given fikenname is short form
+ * is_short_form - chekc if the given file name is short form
  * @data: the data strucct pointer
  *
- * Return: (Success)
- * ------- (Fail) otherwise
+ * Return: (Success) or (Fail)
  */
 void is_short_form(sh_t *data)
 {
@@ -54,8 +52,7 @@ void is_short_form(sh_t *data)
  * is_builtin - checks if the command is builtin
  * @data: a pointer to the data structure
  *
- * Return: (Success) 0 is returned
- * ------- (Fail) negative number will returned
+ * Return: (Success) 0 is returned or (Fail) negative number will returned
  */
 int is_builtin(sh_t *data)
 {

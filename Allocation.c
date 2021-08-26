@@ -1,12 +1,12 @@
 #include "shell.h"
 
 /**
- * _realloc - reallocates memory block
+ * _realloc - reallocates if neccessay
  * @ptr: pointer to the previous memory
- * @old_size: the old size
- * @new_size: the new size
+ * @old_size: the previous size
+ * @new_size: the updated new size
  *
- * Return: a pointer to the newly allocated memory
+ * Return: a pointer to the updated mem
  */
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
@@ -36,7 +36,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 }
 /**
  * _memset - fills a memory with constant byte
- * @s: pointer to memory area
+ * @s: pointer to memory
  * @n: first n bytes
  * @byt: constant byte
  *
